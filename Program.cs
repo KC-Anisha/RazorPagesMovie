@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using RazorPagesMovie.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesMovieContext")));
 
 var app = builder.Build();
 
@@ -18,7 +24,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+// app.UseAuthorization(); <- We don't use auth in this app
 
 app.MapRazorPages();
 
