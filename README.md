@@ -1,1 +1,1 @@
-RazorPagesMovie
+RazorPagesMovie - Created by following the [ASP.Net Core Tutorial/Docs](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/?view=aspnetcore-6.0)
